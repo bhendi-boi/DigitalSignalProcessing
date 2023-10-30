@@ -1,7 +1,7 @@
 % change all the images to grayscale first
 clear;
-ref = double(rgb2gray(imread("carnivaldolls.bmp")));
-refWithNoise = double(rgb2gray(imread("img181.bmp")));
+ref = rgb2gray(double(imread("carnivaldolls.bmp")));
+refWithNoise = rgb2gray(double(imread("img181.bmp")));
 
 [mse1,psnr1] = msePsnr(ref,refWithNoise);
 [ssim1,ssimMap1] = ssim(ref,refWithNoise);
@@ -21,7 +21,7 @@ title("SSIM for carnivaldolls sorted")
 
 %% question 2
 clear;
-ref = rgb2gray(double(imread("carnivaldolls.bmp")));
+ref = double(rgb2gray(imread("carnivaldolls.bmp")));
 refWithNoise = imnoise(ref,"gaussian");
 
 [mse1,psnr1] = msePsnr(refWithNoise,ref);
@@ -30,7 +30,8 @@ subplot(1,2,1)
 imshow(ssimMap1,[])
 title("SSIM for carnivaldolls")
 
-ref2 = rgb2gray(double(imread("monarch.bmp")));
+ref2 = double(rgb2gray(imread("monarch.bmp")));
+ref2= imresize(ref2,[488,610]);
 refWithNoise2 = imnoise(ref2,"gaussian");
 
 [mse2,psnr2] = msePsnr(ref2,refWithNoise2);
