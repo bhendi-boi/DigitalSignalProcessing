@@ -3,5 +3,5 @@ function [mse,psnr] = msePsnr(ref,noise)
 %grayscale images
 %  
 mse = (norm(ref(:)-noise(:),2).^2)/numel(ref);
-psnr = 10 * log(65025/mse);
+psnr = 10 * log10(65025/mse);
 end
