@@ -1,6 +1,6 @@
 function [y, nForPlot] = convolution(x, xStart, h, hStart)
-    [rows1, columns1] = size(x);
-    [rows2, columns2] = size(h);
+    [~, columns1] = size(x);
+    [~, columns2] = size(h);
 
     % last index of y(n) in MATLAB representation
     lastIndex = columns1 + columns2 - 1;
