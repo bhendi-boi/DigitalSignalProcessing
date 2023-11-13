@@ -149,7 +149,7 @@ xlabel("Time (s)")
 ylabel("Square wave")
 title("Square wave with 50% duty cycle and 2 Hz")
 
-randomSignal = 0.25 * randn(1000, 1);
+randomSignal = 0.5 * randn(1000, 1);
 t = 1:1:1000;
 subplot(3, 2, 3);
 plot(t, randomSignal)
